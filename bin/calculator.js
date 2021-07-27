@@ -1,20 +1,12 @@
 #! /usr/bin/env node
 const prompts = require('prompts')
 const AsciiTable = require('ascii-table')
+const chalk = require('chalk')
+
 function percentage (partialValue) {
   return (100 * partialValue) / 30
 }
-console.log(`
-_______ _______ _       _______         _       _______________________ _______ 
-(  ____ (  ___  ( \     (  ____ |\     /( \     (  ___  \__   __(  ___  (  ____ )
-| (    \| (   ) | (     | (    \| )   ( | (     | (   ) |  ) (  | (   ) | (    )|
-| |     | (___) | |     | |     | |   | | |     | (___) |  | |  | |   | | (____)|
-| |     |  ___  | |     | |     | |   | | |     |  ___  |  | |  | |   | |     __)
-| |     | (   ) | |     | |     | |   | | |     | (   ) |  | |  | |   | | (\ (   
-| (____/| )   ( | (____/| (____/| (___) | (____/| )   ( |  | |  | (___) | ) \ \__
-(_______|/     \(_______(_______(_______(_______|/     \|  )_(  (_______|/   \__/
-                                                                                 
-`)
+console.log(chalk.white.bgRed.bold('Motivation calculator v.0.0.1'))
 console.log('Choose from 1 to 10')
 ;(async () => {
   const sallary = await prompts({
