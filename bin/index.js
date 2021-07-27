@@ -20,6 +20,5 @@ console.table(family)
     message: 'Select Application?',
     validate: value => (value <= 10 ? true : false)
   })
-  console.log(App)
   require('./' + apps[App.value - 1] + '.js')
 })()
