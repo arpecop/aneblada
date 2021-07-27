@@ -13,7 +13,10 @@
   "license": "ISC",
   "dependencies": {
     "ascii-table": "^0.0.9",
+    "chalk": "^4.1.1",
+    "cli-list-select": "^0.0.6",
     "cli-select": "^1.1.2",
-    "prompts": "^2.4.1"
+    "prompts": "^2.4.1",
+    "select-shell": "^1.1.3"
   }
 }

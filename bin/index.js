@@ -2,39 +2,24 @@
 const prompts = require('prompts')
 const AsciiTable = require('ascii-table')
 
-console.log('Choose from 1 to 10')
-function percentage (partialValue) {
-  return (100 * partialValue) / 30
+const apps = ['calculator']
+
+function Person (firstName) {
+  this.id = firstName
 }
 
+var family = {}
+
+family.calculator = new Person(1)
+
+console.table(family)
 ;(async () => {
-  const sallary = await prompts({
+  const App = await prompts({
     type: 'number',
     name: 'value',
-    message: 'How much Sallary motivates you?',
+    message: 'Select Application?',
     validate: value => (value <= 10 ? true : false)
   })
-  const workplace = await prompts({
-    type: 'number',
-    name: 'value',
-    message: 'How much Workplace motivates you?',
-    validate: value => (value <= 10 ? true : false)
-  })
-  const coworkers = await prompts({
-    type: 'number',
-    name: 'value',
-    message: 'How much coworkers motivates you?',
-    validate: value => (value <= 10 ? true : false)
-  })
-  const sum = sallary.value + workplace.value + coworkers.value
-  const overall = Math.round(sum / 3)
-  var table = new AsciiTable('A Title')
-  table
-    .setHeading('', 'Name', 'Age')
-    .addRow(null, 'Sallary', sallary.value)
-    .addRow(null, 'Workplace', workplace.value)
-    .addRow(null, 'Coworkers', coworkers.value)
-    .addRow(null)
-    .addRow('Overall Score:', overall, Math.round(percentage(sum)) + '%')
-  console.log(table.toString())
+  console.log(App)
+  require('./' + apps[App.value - 1] + '.js')
 })()
