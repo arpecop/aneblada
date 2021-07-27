@@ -1,0 +1,19 @@
+{
+  "name": "aneblada",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "aneblada": "./bin/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ascii-table": "^0.0.9",
+    "cli-select": "^1.1.2",
+    "prompts": "^2.4.1"
+  }
+}
